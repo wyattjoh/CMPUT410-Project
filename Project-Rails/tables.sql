@@ -1,4 +1,4 @@
-USE `Project-Rails_development`;
+-- USE `Project-Rails_development`;
 
 -- Staffs (members and volunteers), receivers
 INSERT INTO `people` (`user_id`, `user_type`, `name`, `gender`, `age`, `phone`, `e_mail`, `address`,
@@ -84,68 +84,68 @@ SELECT * FROM `shelters`;
 
 -- `shelter_id` of Shelter1 is 1
 INSERT INTO `shelter_staffs` (`people_id`, `staff_type`, `shelter_id`, `start_date`, `accepted`)
-                      VALUES ('1', 'MEMBER', 1, '2000-01-01', TRUE);
+                      VALUES ('1', 'MEMBER', 1, '2000-01-01', 1);
 INSERT INTO `shelter_staffs` (`people_id`, `staff_type`, `shelter_id`, `start_date`, `accepted`)
-                      VALUES ('2', 'VOLUNTEER', 1, '2000-01-01', TRUE);
+                      VALUES ('2', 'VOLUNTEER', 1, '2000-01-01', 1);
 -- `shelter_id` of Shelter2 is 2
 INSERT INTO `shelter_staffs` (`people_id`, `staff_type`, `shelter_id`, `start_date`, `accepted`)
-                      VALUES ('3', 'MEMBER', 2, '2000-01-01', TRUE);
+                      VALUES ('3', 'MEMBER', 2, '2000-01-01', 1);
 -- Rejected volunteer
 INSERT INTO `shelter_staffs` (`people_id`, `staff_type`, `shelter_id`, `start_date`, `accepted`)
-                      VALUES ('4', 'VOLUNTEER', 2, '2001-12-31', FALSE);
+                      VALUES ('4', 'VOLUNTEER', 2, '2001-12-31', 0);
 -- `shelter_id` of Shelter3 is 3
 INSERT INTO `shelter_staffs` (`people_id`, `staff_type`, `shelter_id`, `start_date`, `accepted`)
-                      VALUES ('5', 'MEMBER', 3, '2000-01-01', TRUE);
+                      VALUES ('5', 'MEMBER', 3, '2000-01-01', 1);
 -- Not replied yet
 INSERT INTO `shelter_staffs` (`people_id`, `staff_type`, `shelter_id`, `start_date`, `accepted`)
-                      VALUES ('6', 'VOLUNTEER', 3, NULL, FALSE);
+                      VALUES ('6', 'VOLUNTEER', 3, NULL, 0);
 SELECT * FROM `shelter_staffs`;
 
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AD01', 'dog01', 'dog', 'breed01', '2005-05-05', NULL, 'MALE',
-                       'Medium', 'black', TRUE, 100.00, TRUE, 1);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Medium', 'black', 1, 100.00, 1, 1);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AD02', 'dog02', 'dog', 'breed02', NULL, NULL, 'FEMALE',
-                       'Medium', 'yellow', TRUE, 100.00, FALSE, 1);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Medium', 'yellow', 1, 100.00, 0, 1);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AC01', 'cat01', 'cat', 'breed03', NULL, '2013-05-05', 'MALE',
-                       'Large', 'black', TRUE, 100.00, FALSE, 1);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Large', 'black', 1, 100.00, 0, 1);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AB01', 'bird01', 'bird', 'breed04', '2011-07-24', NULL, 'FEMALE',
-                       'Medium', 'black', TRUE, 100.00, TRUE, 2);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Medium', 'black', 1, 100.00, 1, 2);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AB02', 'bird02', 'bird', 'breed05', '2000-01-09', '2010-09-08', 'MALE',
-                       'Large', 'green', TRUE, 100.00, FALSE, 2);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Large', 'green', 1, 100.00, 0, 2);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AC02', 'cat02', 'cat', 'breed06', '2001-06-24', NULL, 'MALE',
-                       'Large', 'black', TRUE, 100.00, FALSE, 2);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Large', 'black', 1, 100.00, 0, 2);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AC03', 'cat03', 'cat', 'breed07', NULL, NULL, 'MALE',
-                       'small', 'yellow', FALSE, 100.00, TRUE, 3);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'small', 'yellow', 0, 100.00, 1, 3);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AB03', 'bird03', 'bird', 'breed08', NULL, NULL, 'FEMALE',
-                       'small', 'yellow', FALSE, 100.00, FALSE, 3);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'small', 'yellow', 0, 100.00, 0, 3);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AD03', 'dog03', 'dog', 'breed09', NULL, '2009-09-09', 'MALE',
-                       'small', 'yellow', FALSE, 100.00, FALSE, 3);
+                       'small', 'yellow', 0, 100.00, 0, 3);
 -- This animal was not permited to be surrendered into shelters
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AS01', 'snake01', 'snake', 'breed10', NULL, NULL, 'MALE',
-                       'Huge', 'black', FALSE, 0.00, FALSE, NULL);
-INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`, 
+                       'Huge', 'black', 0, 0.00, 0, NULL);
+INSERT INTO `animals` (`animal_id`, `name`, `species`, `breed`, `birthday`, `deathday`, `gender`,
                        `size`, `color`, `sn`, `price`, `stage`, `shelter_id`)
                VALUES ('AS02', 'snake02', 'snake', 'breed11', NULL, NULL, 'MALE',
-                       'Huge', 'yellow', FALSE, 0.00, FALSE, NULL);
+                       'Huge', 'yellow', 0, 0.00, 0, NULL);
 SELECT * FROM `animals`;
 
 INSERT INTO `animal_files` (`animal_id`, `file_type`, `path`)
@@ -191,50 +191,50 @@ INSERT INTO `receipts` (`people_id`, `animal_id`, `received_date`) VALUES ('5', 
 SELECT * FROM `receipts`;
 
 INSERT INTO `adoptions` (`apply_date`, `people_id`, `animal_id`, `adoption_date`, `accepted`)
-                 VALUES ('2013-05-09', '7', '2', '2013-05-09', TRUE);
+                 VALUES ('2013-05-09', '7', '2', '2013-05-09', 1);
 INSERT INTO `adoptions` (`apply_date`, `people_id`, `animal_id`, `adoption_date`, `accepted`)
-                 VALUES ('2003-05-09', '8', '6', '2003-05-19', TRUE);
+                 VALUES ('2003-05-09', '8', '6', '2003-05-19', 1);
 INSERT INTO `adoptions` (`apply_date`, `people_id`, `animal_id`, `adoption_date`, `accepted`)
-                 VALUES ('2003-05-09', '8', '9', '2003-05-19', TRUE);
+                 VALUES ('2003-05-09', '8', '9', '2003-05-19', 1);
 -- Rejected adoption
 INSERT INTO `adoptions` (`apply_date`, `people_id`, `animal_id`, `adoption_date`, `accepted`)
-                 VALUES ('2003-06-09', '9', '6', '2003-06-12', FALSE);
+                 VALUES ('2003-06-09', '9', '6', '2003-06-12', 0);
 -- Not replied yet
 INSERT INTO `adoptions` (`apply_date`, `people_id`, `animal_id`, `adoption_date`, `accepted`)
-                 VALUES ('2003-06-19', '9', '9', NULL, FALSE);
+                 VALUES ('2003-06-19', '9', '9', NULL, 0);
 SELECT * FROM `adoptions`;
 
 INSERT INTO `surrenders` (`apply_date`, `people_id`, `reason`, `surrender_date`, `animal_id`, `accepted`)
-                  VALUES ('2010-04-03', '10', 'No Reason', '2010-04-09', '3', TRUE);
+                  VALUES ('2010-04-03', '10', 'No Reason', '2010-04-09', '3', 1);
 INSERT INTO `surrenders` (`apply_date`, `people_id`, `reason`, `surrender_date`, `animal_id`, `accepted`)
-                  VALUES ('2008-06-15', '11', 'No Reason', '2008-06-15', '5', TRUE);
+                  VALUES ('2008-06-15', '11', 'No Reason', '2008-06-15', '5', 1);
 INSERT INTO `surrenders` (`apply_date`, `people_id`, `reason`, `surrender_date`, `animal_id`, `accepted`)
-                  VALUES ('2010-06-15', '11', 'No Reason', '2010-06-15', '9', TRUE);
+                  VALUES ('2010-06-15', '11', 'No Reason', '2010-06-15', '9', 1);
 -- Rejected surrender
 INSERT INTO `surrenders` (`apply_date`, `people_id`, `reason`, `surrender_date`, `animal_id`, `accepted`)
-                  VALUES ('2010-04-19', '12', 'No Reason', '2010-04-19', '10', FALSE);
+                  VALUES ('2010-04-19', '12', 'No Reason', '2010-04-19', '10', 0);
 -- Not replied yet
 INSERT INTO `surrenders` (`apply_date`, `people_id`, `reason`, `surrender_date`, `animal_id`, `accepted`)
-                  VALUES ('2010-04-19', '12', 'No Reason', NULL, '11', FALSE);
+                  VALUES ('2010-04-19', '12', 'No Reason', NULL, '11', 0);
 SELECT * FROM `surrenders`;
 
 INSERT INTO `donations`
               (`apply_date`, `people_id`, `donation_type`, `content`, `animal_id`, `donation_date`, `accepted`)
-       VALUES ('2010-09-03', '13js-d01', 'VETCARE', 'Dental care', '1', '2010-09-03', TRUE);
+       VALUES ('2010-09-03', '13js-d01', 'VETCARE', 'Dental care', '1', '2010-09-03', 1);
 INSERT INTO `donations`
               (`apply_date`, `people_id`, `donation_type`, `content`, `animal_id`, `donation_date`, `accepted`)
-       VALUES ('2012-05-09', '14', 'MONEY', '$1000.00', '4', '2012-05-19', TRUE);
+       VALUES ('2012-05-09', '14', 'MONEY', '$1000.00', '4', '2012-05-19', 1);
 INSERT INTO `donations`
               (`apply_date`, `people_id`, `donation_type`, `content`, `animal_id`, `donation_date`, `accepted`)
-       VALUES ('2012-05-09', '14', 'ITEM', 'Bird house x2', NULL, '2012-05-11', TRUE);
+       VALUES ('2012-05-09', '14', 'ITEM', 'Bird house x2', NULL, '2012-05-11', 1);
 -- Rejected donation
 INSERT INTO `donations`
               (`apply_date`, `people_id`, `donation_type`, `content`, `animal_id`, `donation_date`, `accepted`)
-       VALUES ('2004-07-06', '15', 'MONEY', '$1000.00', '7', '2004-07-07', FALSE);
+       VALUES ('2004-07-06', '15', 'MONEY', '$1000.00', '7', '2004-07-07', 0);
 -- Not replied yet
 INSERT INTO `donations`
               (`apply_date`, `people_id`, `donation_type`, `content`, `animal_id`, `donation_date`, `accepted`)
-       VALUES ('2004-07-06', '15', 'ITEM', 'Cat food', '7', NULL, FALSE);
+       VALUES ('2004-07-06', '15', 'ITEM', 'Cat food', '7', NULL, 0);
 SELECT * FROM `donations`;
 
 -- All users' passwords are set to '12345678'
@@ -255,4 +255,3 @@ INSERT INTO `users` (`email`, `encrypted_password`, `sign_in_count`, `current_si
              VALUES ('js-31@b.com', '$2a$10$YVALXF0zTBavh6Zwwa5JGebYod7PAltFunm/jREl8Ou0v8VWlKWP6', '1',
                      '2014-03-28 07:25:38', '2014-03-28 07:25:38', '127.0.0.1', '127.0.0.1');
 SELECT * FROM `users`;
-
