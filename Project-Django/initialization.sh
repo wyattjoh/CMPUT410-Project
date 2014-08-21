@@ -1,10 +1,12 @@
 #!/bin/bash
 
+set -e
+
 answer='no'
 password='12345678'
 
-echo 'mysql -u root -p < database.sql'
-mysql -u root -p < database.sql 1>/dev/null
+# echo 'mysql -u root -p < database.sql'
+# mysql -u root -p < database.sql 1>/dev/null
 
 echo 'python manage.py syncdb'
 expect -c "
@@ -12,8 +14,8 @@ expect -c "
   expect \"Would you like to create one now? (yes/no):\" { send \"$answer\r\" }
 " 1>/dev/null
 
-echo 'mysql -u root -p < PetShelter/tables.sql'
-mysql -u root -p < PetShelter/tables.sql 1>/dev/null
+# echo 'mysql -u root -p < PetShelter/tables.sql'
+# mysql -u root -p < PetShelter/tables.sql 1>/dev/null
 
 echo 'python manage.py createsuperuser --username=marco --email=zxu3@ualberta.ca'
 expect -c "
@@ -59,4 +61,3 @@ expect -c "
   interact
 " 1>/dev/null
 echo "Password: $password"
-

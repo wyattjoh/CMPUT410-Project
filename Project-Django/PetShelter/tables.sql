@@ -1,4 +1,4 @@
-USE Project-Django;
+-- USE Project-Django;
 
 -- "python manage.py syncdb" can do the following for you:
 -- =============================================================================
