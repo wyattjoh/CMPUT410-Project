@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # ==================================== Create database ====================================
 # echo -e "mysql -u root -p (Creating ralated databases)"
 # mysql -u root -p -e "

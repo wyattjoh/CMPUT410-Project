@@ -10,19 +10,19 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter:  "sqlite3",
-  database: "db.sqlite3"
+    adapter:  "sqlite3"
+    database: "db.sqlite3"
 
 development:
-  <<: *default
-  database: Project-Rails_development
+    <<: *default
+    database: Project-Rails_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: Project-Rails_test
+    <<: *default
+    database: Project-Rails_test
 
 # Avoid production credentials in the repository,
 # instead read the configuration from the environment.
@@ -31,4 +31,4 @@ test:
 #   mysql2://myuser:mypass@localhost/somedatabase
 #
 production:
-  url: <%= ENV["DATABASE_URL"] %>
+    url: <%= ENV["DATABASE_URL"] %>

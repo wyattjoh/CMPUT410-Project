@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "adoptions", ["animal_id"], name: "index_adoptions_on_animal_id", using: :btree
-  add_index "adoptions", ["people_id"], name: "index_adoptions_on_people_id", using: :btree
+  add_index "adoptions", ["animal_id"], name: "index_adoptions_on_animal_id"
+  add_index "adoptions", ["people_id"], name: "index_adoptions_on_people_id"
 
   create_table "animal_files", force: true do |t|
     t.integer  "animal_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "animal_files", ["animal_id"], name: "index_animal_files_on_animal_id", using: :btree
+  add_index "animal_files", ["animal_id"], name: "index_animal_files_on_animal_id"
 
   create_table "animals", force: true do |t|
     t.string   "animal_id",  limit: 10
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "animals", ["shelter_id"], name: "index_animals_on_shelter_id", using: :btree
+  add_index "animals", ["shelter_id"], name: "index_animals_on_shelter_id"
 
   create_table "donations", force: true do |t|
     t.date     "apply_date"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "donations", ["animal_id"], name: "index_donations_on_animal_id", using: :btree
-  add_index "donations", ["people_id"], name: "index_donations_on_people_id", using: :btree
+  add_index "donations", ["animal_id"], name: "index_donations_on_animal_id"
+  add_index "donations", ["people_id"], name: "index_donations_on_people_id"
 
   create_table "people", force: true do |t|
     t.string   "user_id",        limit: 20
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "receipts", ["animal_id"], name: "index_receipts_on_animal_id", using: :btree
-  add_index "receipts", ["people_id"], name: "index_receipts_on_people_id", using: :btree
+  add_index "receipts", ["animal_id"], name: "index_receipts_on_animal_id"
+  add_index "receipts", ["people_id"], name: "index_receipts_on_people_id"
 
   create_table "shelter_staffs", force: true do |t|
     t.integer  "user_id"
@@ -113,9 +113,9 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "shelter_staffs", ["people_id"], name: "index_shelter_staffs_on_people_id", using: :btree
-  add_index "shelter_staffs", ["shelter_id"], name: "index_shelter_staffs_on_shelter_id", using: :btree
-  add_index "shelter_staffs", ["user_id"], name: "index_shelter_staffs_on_user_id", using: :btree
+  add_index "shelter_staffs", ["people_id"], name: "index_shelter_staffs_on_people_id"
+  add_index "shelter_staffs", ["shelter_id"], name: "index_shelter_staffs_on_shelter_id"
+  add_index "shelter_staffs", ["user_id"], name: "index_shelter_staffs_on_user_id"
 
   create_table "shelters", force: true do |t|
     t.integer  "shelter_id"
@@ -143,8 +143,8 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.datetime "updated_at"
   end
 
-  add_index "surrenders", ["animal_id"], name: "index_surrenders_on_animal_id", using: :btree
-  add_index "surrenders", ["people_id"], name: "index_surrenders_on_people_id", using: :btree
+  add_index "surrenders", ["animal_id"], name: "index_surrenders_on_animal_id"
+  add_index "surrenders", ["people_id"], name: "index_surrenders_on_people_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -160,8 +160,8 @@ ActiveRecord::Schema.define(version: 20140327020140) do
     t.string   "username"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
